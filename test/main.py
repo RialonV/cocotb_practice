@@ -7,7 +7,7 @@ import sys
 
 
 sys.path.insert(0, '../pytest')
-import ram as py_tests
+import axis_m as py_tests
 
 
 for obj in dir(py_tests):
