@@ -1,0 +1,4 @@
+# Default ignored files
+/.idea
+/test/__pycache__
+/test/sim_build
