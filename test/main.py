@@ -5,7 +5,7 @@ from cocotb.triggers import Timer, ClockCycles, FallingEdge, RisingEdge
 from cocotb.regression import TestFactory
 import sys
 
-
+sys.path.insert(0, '../pysrc')
 sys.path.insert(0, '../pytest')
 import axis_m as py_tests
 

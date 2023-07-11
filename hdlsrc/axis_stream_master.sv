@@ -1,6 +1,11 @@
-module axis_stream_master (
-	input clk,
-	input rst_n,
+module axis_stream_master #(
+	parameter WIDTH_AXIS_M_TDATA = 8,
+	parameter WIDTH_AXIS_M_TUSER = 8,
+	parameter WIDTH_AXIS_M_TID   = 8,
+	parameter WIDTH_AXIS_M_TKEEP = 8
+)(
+	input axis_m_clk,
+	input axis_m_rst,
 	
 	input logic axis_m_tvalid,
 	input logic [7:0] axis_m_tdata,
@@ -12,8 +17,8 @@ module axis_stream_master (
 );
 
 
-always_ff @(posedge clk)
-	if (!rst_n)
+always_ff @(posedge axis_m_clk)
+	if (axis_m_rst)
 		axis_m_tready <= '0;
 	else
 		axis_m_tready <= $random();
@@ -27,7 +32,7 @@ axis_m_tkeep_lc;
 
 logic axis_m_tlast_lc;
 
-always_ff @(posedge clk)
+always_ff @(posedge axis_m_clk)
 	if (axis_m_tvalid && axis_m_tready)
 		{axis_m_tdata_lc,
 		 axis_m_tuser_lc,
