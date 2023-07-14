@@ -11,9 +11,12 @@ VERILOG_SOURCES += ../hdlsrc/cnt.sv
 VERILOG_SOURCES += ../hdlsrc/param_fifo.sv
 VERILOG_SOURCES += ../hdlsrc/param_ram.sv
 VERILOG_SOURCES += ../hdlsrc/axis_stream_master.sv
+VERILOG_SOURCES += ../hdlsrc/axis_tools.sv
+VERILOG_SOURCES += ../hdlsrc/axis_param_fifo.sv
+VERILOG_SOURCES += ../hdlsrc/axis_param_fifo_wrapper.sv
 
 # TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
-TOPLEVEL := axis_stream_master
+TOPLEVEL := axis_param_fifo_wrapper
 
 # MODULE is the basename of the Python test file
 MODULE := main

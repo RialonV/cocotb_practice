@@ -1,4 +1,5 @@
 from typing import List
+from cocotb.binary import BinaryValue
 
 
 class AXIS:
@@ -19,8 +20,13 @@ class AXIS:
 
         def __repr__(self):
             def hn(v):  # hex or None
-                if v is None:
-                    return 'x'
+                if type(v) is BinaryValue:
+                    if v.is_resolvable:
+                        return '%X' % v.integer
+                    else:
+                        return v.binstr
+                elif v is None:
+                    return "x"
                 else:
                     return '%X' % v
             return "AXIS.Payload(d:{} l:{} u:{} i:{} k:{})".format(*(hn(v) for v in self._all))
