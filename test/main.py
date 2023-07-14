@@ -7,7 +7,8 @@ import sys
 
 sys.path.insert(0, '../pysrc')
 sys.path.insert(0, '../pytest')
-import axis_m as py_tests
+sys.path.insert(0, '../pytest/tools')
+import axis_param_fifo as py_tests
 
 
 for obj in dir(py_tests):

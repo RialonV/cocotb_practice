@@ -4,17 +4,15 @@ module param_fifo #(
 	parameter bit REG_OUT    = 0                 ,
 	parameter int _WIDTH_UW  = $clog2(NUMWORDS+1)
 ) (
-	input  logic                  clk    ,
-	input  logic                  rst    ,
-
-	input  logic                  wr_en  ,
-	input  logic [WIDTH_DATA-1:0] wr_data,
-
-	input  logic                  rd_en  ,
-	output logic [WIDTH_DATA-1:0] rd_data,
-
-	output logic                  full   ,
-	output logic                  empty  ,
+	input  logic                  clk      ,
+	input  logic                  rst      ,
+	input  logic                  wr_en    ,
+	input  logic [WIDTH_DATA-1:0] wr_data  ,
+	input  logic                  rd_en    ,
+	input  logic                  rd_reg_en,
+	output logic [WIDTH_DATA-1:0] rd_data  ,
+	output logic                  full     ,
+	output logic                  empty    ,
 	output logic [ _WIDTH_UW-1:0] usedw
 );
 
@@ -59,7 +57,7 @@ param_ram #(.WIDTH_DATA(WIDTH_DATA), .NUMWORDS(NUMWORDS)) i_param_ram (
 always_ff @(posedge clk or posedge rst)
 	if (rst)
 		rd_data_reg <= '0;
-	else
+	else if (rd_reg_en)
 		rd_data_reg <= rd_data_async;
 
 assign rd_data = REG_OUT ? rd_data_reg : rd_data_async;
