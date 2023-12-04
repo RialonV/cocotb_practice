@@ -1,3 +1,11 @@
+// Copyright (c) 2023=2023 All rights reserved
+// =============================================================================
+// Author : Andrey Vasilchenko (Andrey) andvasilc3@gmail.com
+// File   : axis_tools.sv
+// Create : 2023-12-03 21:24:56
+// Revise : 2023-12-03 21:24:57
+// Editor : sublime text4, tab size (4)
+// =============================================================================
 module axis_from_pld #(
 	parameter WIDTH_TDATA,
 	parameter WIDTH_TUSER,
