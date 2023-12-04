@@ -1,3 +1,11 @@
+// Copyright (c) 2023=2023 All rights reserved
+// =============================================================================
+// Author : Andrey Vasilchenko (Andrey) andvasilc3@gmail.com
+// File   : param_fifo.sv
+// Create : 2023-12-03 21:25:52
+// Revise : 2023-12-03 21:25:52
+// Editor : sublime text4, tab size (4)
+// =============================================================================
 module param_fifo #(
 	parameter int WIDTH_DATA = 0                 ,
 	parameter int NUMWORDS   = 0                 ,

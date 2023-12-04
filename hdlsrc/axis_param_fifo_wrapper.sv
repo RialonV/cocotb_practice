@@ -1,3 +1,11 @@
+// Copyright (c) 2023=2023 All rights reserved
+// =============================================================================
+// Author : Andrey Vasilchenko (Andrey) andvasilc3@gmail.com
+// File   : axis_param_fifo_wrapper.sv
+// Create : 2023-12-03 21:25:33
+// Revise : 2023-12-03 21:25:34
+// Editor : sublime text4, tab size (4)
+// =============================================================================
 module axis_param_fifo_wrapper();
 
 localparam     WIDTH_TDATA = 16;

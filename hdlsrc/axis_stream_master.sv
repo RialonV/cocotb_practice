@@ -1,3 +1,11 @@
+// Copyright (c) 2023=2023 All rights reserved
+// =============================================================================
+// Author : Andrey Vasilchenko (Andrey) andvasilc3@gmail.com
+// File   : axis_stream_master.sv
+// Create : 2023-12-03 21:25:37
+// Revise : 2023-12-03 21:25:37
+// Editor : sublime text4, tab size (2)
+// =============================================================================
 module axis_stream_master #(
 	parameter WIDTH_AXIS_M_TDATA = 8,
 	parameter WIDTH_AXIS_M_TUSER = 8,
